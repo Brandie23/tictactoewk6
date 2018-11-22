@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './Board';
+import Timer from './Timer';
 
 const calculateWinner = (squares) => {
   const lines = [
@@ -124,6 +125,7 @@ class Game extends React.Component {
             winnerSquares={winnerRow}
             onClick={i => this.handleClick(i)}
           />
+          <Timer autoPlay={true} initialSeconds={0}/>
         </div>
         <div className="game-info">
           <div>{status}</div>
