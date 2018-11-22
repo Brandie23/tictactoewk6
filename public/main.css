@@ -1,6 +1,7 @@
 body {
   font: 24px 'Century Gothic', Futura, sans-serif;
   margin: 20px;
+  background-color: cornflowerblue;
 }
 
 ol,
@@ -19,8 +20,8 @@ ul {
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #FF6037;
+  border: 2px solid black;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -34,7 +35,7 @@ ul {
 }
 
 .square--green {
-  background: green;
+  background:#FF6037;
 }
 
 .square:focus {
@@ -55,7 +56,7 @@ ul {
 }
 
 .button {
-  background-color: #555555; /* Green */
+  background-color: #FF6037;
   border: none;
   color: #fff;
   padding: 5px 10px;
@@ -66,7 +67,7 @@ ul {
 }
 
 .button--green {
-  background-color: #4caf50;
+  background-color: #FF6037;
   color: #000;
   font-weight: bold;
 }
