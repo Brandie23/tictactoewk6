@@ -1,12 +1,12 @@
 body {
   font: 24px 'Century Gothic', Futura, sans-serif;
-  margin: 20px;
+  margin: 30px;
   background-color: cornflowerblue;
 }
 
 ol,
 ul {
-  padding-left: 30px;
+  padding-left: 40px;
 }
 
 .board-row:after {
@@ -25,13 +25,13 @@ ul {
   float: left;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
-  height: 54px;
+  line-height: 104px;
+  height: 124px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 54px;
+  width: 124px;
 }
 
 .square--green {
