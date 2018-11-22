@@ -35,7 +35,8 @@ ul {
 }
 
 .square--green {
-  background:#FF6037;
+  /* This is what the color changes to when the row has been won */
+  background:#FFFF00;
 }
 
 .square:focus {
@@ -66,7 +67,8 @@ ul {
   cursor: pointer;
 }
 
-.button--green {
+.button--green {  
+  /* button green basically means the buttons containing text that control the game moves */
   background-color: #FF6037;
   color: #000;
   font-weight: bold;
