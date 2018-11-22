@@ -1,7 +1,9 @@
-import React from 'react';
-import Board from './Board';
+import React from "react";
+import Board from "./Board";
+import { connect } from "react-redux";
+import { showMessage } from "../actions";
 
-const calculateWinner = (squares) => {
+const calculateWinner = squares => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -10,7 +12,7 @@ const calculateWinner = (squares) => {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6],
+    [2, 4, 6]
   ];
 
   for (let i = 0; i < lines.length; i += 1) {
@@ -23,17 +25,17 @@ const calculateWinner = (squares) => {
   return { winner: null, winnerRow: null };
 };
 
-const getLocation = (move) => {
+const getLocation = move => {
   const locationMap = {
-    0: 'row: 1, col: 1',
-    1: 'row: 1, col: 2',
-    2: 'row: 1, col: 3',
-    3: 'row: 2, col: 1',
-    4: 'row: 2, col: 2',
-    5: 'row: 2, col: 3',
-    6: 'row: 3, col: 1',
-    7: 'row: 3, col: 2',
-    8: 'row: 3, col: 3',
+    0: "row: 1, col: 1",
+    1: "row: 1, col: 2",
+    2: "row: 1, col: 3",
+    3: "row: 2, col: 1",
+    4: "row: 2, col: 2",
+    5: "row: 2, col: 3",
+    6: "row: 3, col: 1",
+    7: "row: 3, col: 2",
+    8: "row: 3, col: 3"
   };
 
   return locationMap[move];
@@ -45,46 +47,50 @@ class Game extends React.Component {
     this.state = {
       history: [
         {
-          squares: Array(9).fill(null),
-        },
+          squares: Array(9).fill(null)
+        }
       ],
       currentStepNumber: 0,
-      xIsNext: true,
+      xIsNext: true
     };
   }
 
   handleClick(i) {
-    const history = this.state.history.slice(0, this.state.currentStepNumber + 1);
+    const history = this.state.history.slice(
+      0,
+      this.state.currentStepNumber + 1
+    );
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
     if (calculateWinner(squares).winner || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({
       history: history.concat([
         {
           squares,
           currentLocation: getLocation(i),
-          stepNumber: history.length,
-        },
+          stepNumber: history.length
+        }
       ]),
       xIsNext: !this.state.xIsNext,
-      currentStepNumber: history.length,
+      currentStepNumber: history.length
     });
+    this.props.dispatch(showMessage("nice move"));
   }
 
   jumpTo(step) {
     this.setState({
       currentStepNumber: step,
-      xIsNext: step % 2 === 0,
+      xIsNext: step % 2 === 0
     });
   }
 
   sortMoves() {
     this.setState({
-      history: this.state.history.reverse(),
+      history: this.state.history.reverse()
     });
   }
 
@@ -94,13 +100,21 @@ class Game extends React.Component {
     const { winner, winnerRow } = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
-      const currentLocation = step.currentLocation ? `(${step.currentLocation})` : '';
-      const desc = step.stepNumber ? `Go to move #${step.stepNumber}` : 'Go to game start';
-      const classButton = move === this.state.currentStepNumber ? 'button--green' : '';
+      const currentLocation = step.currentLocation
+        ? `(${step.currentLocation})`
+        : "";
+      const desc = step.stepNumber
+        ? `Go to move #${step.stepNumber}`
+        : "Go to game start";
+      const classButton =
+        move === this.state.currentStepNumber ? "button--green" : "";
 
       return (
         <li key={step.stepNumber}>
-          <button className={`${classButton} button`} onClick={() => this.jumpTo(move)}>
+          <button
+            className={`${classButton} button`}
+            onClick={() => this.jumpTo(move)}
+          >
             {`${desc} ${currentLocation}`}
           </button>
         </li>
@@ -111,13 +125,14 @@ class Game extends React.Component {
     if (winner) {
       status = `Winner ${winner}`;
     } else if (history.length === 10) {
-      status = 'Draw. No one won.';
+      status = "Draw. No one won.";
     } else {
-      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+      status = `Next player: ${this.state.xIsNext ? "X" : "O"}`;
     }
 
     return (
       <div className="game">
+        <h2>{this.props.message}</h2>
         <div className="game-board">
           <Board
             squares={current.squares}
@@ -137,4 +152,10 @@ class Game extends React.Component {
   }
 }
 
-export default Game;
+const mapStateToProps = state => {
+  return {
+    message: state.message
+  };
+};
+
+export default connect(mapStateToProps)(Game);
