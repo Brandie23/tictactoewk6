@@ -1737,7 +1737,7 @@ var _reduxThunk = __webpack_require__(50);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _Game = __webpack_require__(52);
+var _Game = __webpack_require__(51);
 
 var _Game2 = _interopRequireDefault(_Game);
 
@@ -26570,8 +26570,7 @@ thunk.withExtraArgument = createThunkMiddleware;
 /* harmony default export */ __webpack_exports__["default"] = (thunk);
 
 /***/ }),
-/* 51 */,
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26589,7 +26588,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Board = __webpack_require__(53);
+var _Board = __webpack_require__(52);
 
 var _Board2 = _interopRequireDefault(_Board);
 
@@ -26773,7 +26772,7 @@ var Game = function (_React$Component) {
 exports.default = Game;
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26789,7 +26788,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Square = __webpack_require__(54);
+var _Square = __webpack_require__(53);
 
 var _Square2 = _interopRequireDefault(_Square);
 
@@ -26863,7 +26862,7 @@ var Board = function (_React$Component) {
 exports.default = Board;
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
