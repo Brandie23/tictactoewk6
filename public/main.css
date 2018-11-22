@@ -1,7 +1,8 @@
 body {
   font: 24px 'Century Gothic', Futura, sans-serif;
+  color: white;
   margin: 30px;
-  background-color: cornflowerblue;
+  background-color: darkslateblue;
 }
 
 ol,
@@ -70,7 +71,7 @@ ul {
 .button--green {
   /* button green basically means the buttons containing text that control the game moves */
   background-color: #FF6037;
-  color: #000;
+  color: white;
   font-weight: bold;
 }
 
@@ -90,7 +91,7 @@ ul {
 }
 
 .tile {
-  border: solid black 1px;
+  border: solid white;
   border-radius: 10%;
   padding: 10px;
   align-content: center;
