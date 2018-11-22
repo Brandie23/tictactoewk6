@@ -36,7 +36,7 @@ ul {
 
 .square--green {
   /* This is what the color changes to when the row has been won */
-  background:#FFFF00;
+  background: #FFCC33;
 }
 
 .square:focus {
@@ -67,7 +67,7 @@ ul {
   cursor: pointer;
 }
 
-.button--green {  
+.button--green {
   /* button green basically means the buttons containing text that control the game moves */
   background-color: #FF6037;
   color: #000;
@@ -75,10 +75,7 @@ ul {
 }
 
 
-
 /* REACT/REDUX CSS: */
-
-
 
 .game {
   text-align: center;
@@ -102,3 +99,58 @@ ul {
   height: 100px;
   width: 100px;
 }
+
+
+
+
+/* MARQUEE CSS - SCROLLING text */
+
+.marquee {
+  height: 50px;	
+  overflow: hidden;
+  position: relative;
+ }
+
+ .marquee h1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+
+  /* Starting position */
+  -moz-transform:translateX(100%);
+  -webkit-transform:translateX(100%);	
+  transform:translateX(100%);
+
+  /* Apply animation to this element */	
+  -moz-animation: example1 15s linear infinite;
+  -webkit-animation: example1 15s linear infinite;
+  animation: example1 15s linear infinite;
+ }
+
+ /* Move it (define the animation) */
+ @-moz-keyframes example1 {
+  0%   { -moz-transform: translateX(100%); }
+  100% { -moz-transform: translateX(-100%); }
+ }
+
+ @-webkit-keyframes example1 {
+  0%   { -webkit-transform: translateX(100%); }
+  100% { -webkit-transform: translateX(-100%); }
+ }
+
+ @keyframes example1 {
+  0%   { 
+  -moz-transform: translateX(100%); /* Firefox bug fix */
+  -webkit-transform: translateX(100%); /* Firefox bug fix */
+  transform: translateX(100%); 		
+  }
+
+  100% { 
+  -moz-transform: translateX(-100%); /* Firefox bug fix */
+  -webkit-transform: translateX(-100%); /* Firefox bug fix */
+  transform: translateX(-100%); 
+  }
+ }
