@@ -1,6 +1,7 @@
 body {
   font: 24px 'Century Gothic', Futura, sans-serif;
   margin: 30px;
+  color: white;
   background-color: darkslateblue;
 }
 
@@ -74,7 +75,9 @@ ul {
   font-weight: bold;
 }
 
+
 /* REACT/REDUX CSS: */
+
 
 .game {
   text-align: center;
