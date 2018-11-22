@@ -104,18 +104,21 @@
     }
   }
   .stars {
-    margin-top:-10px;
+    z-index:-1;
     bottom: 0;
     left: 0;
+    /* position: relative; */
     position: fixed;
     right: 0;
     top: 0;
   }
   .stars__star {
+    z-index:-1;
     border-radius: 50%;
     box-shadow: 0 0 4px 1px #FFF;
     height: 1px;
     position: fixed;
+    /* position: relative; */
     width: 1px;
     z-index: 100;
   }
