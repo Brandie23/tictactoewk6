@@ -1737,11 +1737,26 @@ var _reduxThunk = __webpack_require__(50);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _Game = __webpack_require__(52);
+var _reducers = __webpack_require__(54);
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+var _Game = __webpack_require__(51);
 
 var _Game2 = _interopRequireDefault(_Game);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+store.subscribe(function () {
+  console.log("Store is now ", store.getState());
+});
+
+var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
+
+var store = (0, _redux.createStore)(_reducers2.default, composeEnhancers((0, _redux.applyMiddleware)(_reduxThunk2.default)));
+
+// import reducers from './reducers'
+
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 // const store = createStore(reducers, composeEnhancers(
@@ -1749,7 +1764,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // ))
 
 document.addEventListener("DOMContentLoaded", function () {
-  (0, _reactDom.render)(_react2.default.createElement(_Game2.default, null), document.getElementById("game"));
+  (0, _reactDom.render)(_react2.default.createElement(
+    _reactRedux.Provider,
+    { store: store },
+    _react2.default.createElement(_Game2.default, null)
+  ), document.getElementById("game"));
 });
 
 // document.addEventListener('DOMContentLoaded', () => {
@@ -1760,9 +1779,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //       document.getElementById('app')
 //     )
 //   })
-
-
-// import reducers from './reducers'
 
 /***/ }),
 /* 18 */
@@ -26570,8 +26586,7 @@ thunk.withExtraArgument = createThunkMiddleware;
 /* harmony default export */ __webpack_exports__["default"] = (thunk);
 
 /***/ }),
-/* 51 */,
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26589,7 +26604,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Board = __webpack_require__(53);
+var _Board = __webpack_require__(52);
 
 var _Board2 = _interopRequireDefault(_Board);
 
@@ -26773,7 +26788,7 @@ var Game = function (_React$Component) {
 exports.default = Game;
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26789,7 +26804,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Square = __webpack_require__(54);
+var _Square = __webpack_require__(53);
 
 var _Square2 = _interopRequireDefault(_Square);
 
@@ -26863,7 +26878,7 @@ var Board = function (_React$Component) {
 exports.default = Board;
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26888,6 +26903,21 @@ var Square = function Square(props) {
 };
 
 exports.default = Square;
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(14);
+
+exports.default = (0, _redux.combineReducers)({});
 
 /***/ })
 /******/ ]);
