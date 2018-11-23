@@ -26984,7 +26984,7 @@ var Timer = function (_React$Component) {
                     'div',
                     {
                         className: 'target'
-                        // style={{ backgroundColor: Game.bgColors[gameStatus] }}
+
                     },
                     gameStatus === 'new' ? '?' : this.target
                 ),

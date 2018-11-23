@@ -25,7 +25,7 @@ class Timer extends React.Component {
         this.setState({ gameStatus: 'playing' }, () => {
         this.intervalId = setInterval(() => {
             this.setState((prevState) => {
-            const newRemainingSeconds = prevState.remainingSeconds - 1;
+            const newRemainingSeconds = prevState.remainingSeconds -1;
             if (newRemainingSeconds === 0) {
                 clearInterval(this.intervalId);
                 return { gameStatus: 'lost', remainingSeconds: 0 };
@@ -45,7 +45,7 @@ class Timer extends React.Component {
         <div className="game">
             <div
             className="target"
-            // style={{ backgroundColor: Game.bgColors[gameStatus] }}
+            
             >
             {gameStatus === 'new' ? '?' : this.target}
             </div>
