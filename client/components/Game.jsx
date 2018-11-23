@@ -98,7 +98,7 @@ class Game extends React.Component {
 
   restartGame() {
     this.setState({
-      restartGame: this.state.restartGame()
+      restartGame: this.state.restart.timer()
     })
   }
 
