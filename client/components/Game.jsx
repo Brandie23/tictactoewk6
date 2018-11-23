@@ -89,8 +89,8 @@ class Game extends React.Component {
       xIsNext: step % 2 === 0
     });
   }
- 
- sortMoves() {
+
+  sortMoves() {
     this.setState({
       history: this.state.history.reverse()
     });
@@ -99,7 +99,7 @@ class Game extends React.Component {
   restartGame() {
     this.setState({
       restartGame: this.state.restartGame()
-    })
+    });
   }
 
   render() {
@@ -147,17 +147,18 @@ class Game extends React.Component {
             winnerSquares={winnerRow}
             onClick={i => this.handleClick(i)}
           />
-<<<<<<< HEAD
-          <Timer autoPlay={true} initialSeconds={0} />
-=======
-          <Timer autoPlay={true} initialSeconds={20} restartGame={this.restartGame}/>
->>>>>>> v1-bob
+
+          <Timer
+            autoPlay={true}
+            initialSeconds={20}
+            restartGame={this.restartGame}
+          />
         </div>
         <div className="game-info">
           <div>{status}</div>
-         <button className="button" onClick={() => this.sortMoves()}>
-           TABLE FLIP!!
-          </button> 
+          <button className="button" onClick={() => this.sortMoves()}>
+            TABLE FLIP!!
+          </button>
           <ol>{moves}</ol>
         </div>
         {/* <iframe
