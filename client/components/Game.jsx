@@ -2,8 +2,8 @@ import React from "react";
 import Board from "./Board";
 import { connect } from "react-redux";
 import { showMessage } from "../actions";
-import Timer from './Timer';
-
+import Timer from "./Timer";
+import Video from "./Video";
 
 const calculateWinner = squares => {
   const lines = [
@@ -141,7 +141,7 @@ class Game extends React.Component {
             winnerSquares={winnerRow}
             onClick={i => this.handleClick(i)}
           />
-          <Timer autoPlay={true} initialSeconds={0}/>
+          <Timer autoPlay={true} initialSeconds={0} />
         </div>
         <div className="game-info">
           <div>{status}</div>
@@ -150,6 +150,15 @@ class Game extends React.Component {
           </button>
           <ol>{moves}</ol>
         </div>
+        {/* <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/6PWRniGrWNQ?controls=0"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        /> */}
+        <Video />
       </div>
     );
   }
