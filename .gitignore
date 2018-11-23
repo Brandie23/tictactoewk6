@@ -20,5 +20,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
+public/bundle.js*
+=======
 public/bundle.js*
 
+>>>>>>> f9f899b89f4b1cf067095a45e0967575e619ed88
