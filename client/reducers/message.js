@@ -1,6 +1,6 @@
 // import { SHOW_ERROR, RECEIVE_POSTS } from '../actions'
 
-function reducer(state = "", action) {
+function message(state = "", action) {
   switch (action.type) {
     case "SHOW_MESSAGE":
       return action.message;
@@ -12,4 +12,4 @@ function reducer(state = "", action) {
   }
 }
 
-export default reducer;
+export default message;

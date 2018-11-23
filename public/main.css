@@ -1,5 +1,5 @@
 body {
-  font: 24px 'Century Gothic', Futura, sans-serif;
+  font: 24px "Century Gothic", Futura, sans-serif;
   margin: 30px;
   color: white;
   background-color: darkslateblue;
@@ -12,7 +12,7 @@ ul {
 
 .board-row:after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
@@ -21,7 +21,7 @@ ul {
 }
 
 .square {
-  background: #FF6037;
+  background: #ff6037;
   border: 2px solid black;
   float: left;
   font-size: 24px;
@@ -37,7 +37,7 @@ ul {
 
 .square--green {
   /* This is what the color changes to when the row has been won */
-  background: #FFCC33;
+  background: #ffcc33;
 }
 
 .square:focus {
@@ -58,7 +58,7 @@ ul {
 }
 
 .button {
-  background-color: #FF6037;
+  background-color: #ff6037;
   border: none;
   color: #fff;
   padding: 5px 10px;
@@ -70,14 +70,12 @@ ul {
 
 .button--green {
   /* button green basically means the buttons containing text that control the game moves */
-  background-color: #FF6037;
+  background-color: #ff6037;
   color: white;
   font-weight: bold;
 }
 
-
 /* REACT/REDUX CSS: */
-
 
 .game {
   text-align: center;
@@ -97,7 +95,14 @@ ul {
   padding: 10px;
   align-content: center;
   font-size: 80px;
-  font-family: 'Symbola';
+  font-family: "Symbola";
   height: 100px;
   width: 100px;
+}
+
+#video {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: red;
 }
